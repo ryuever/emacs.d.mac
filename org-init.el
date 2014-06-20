@@ -297,6 +297,25 @@
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :publishing-directory "~/Documents/public_html/emacs/"
          :publishing-function org-publish-attachment)
+
+        ("Compiler-notes"
+         :base-directory "~/Dropbox/org/compiler/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/Documents/public_html/compiler/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("Compiler-static"
+         :base-directory "~/Dropbox/org/compiler/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/Documents/public_html/compiler/"
+         :publishing-function org-publish-attachment)
         
         ("PythonCookbook" :components ("PythonCookbook-inherit" "PythonCookbook-notes" "PythonCookbook-static"))
         ("Japanese" :components ("Japanese-notes" "Japanese-static"))
@@ -304,4 +323,5 @@
         ("Compiler" :components ( "Compiler-notes" "Compiler-static"))
         ("Linux" :components ( "Linux-notes" "Linux-static"))
         ("Emacs" :components ( "Emacs-notes" "Emacs-static"))
+        ("Compiler" :components ( "Compiler-notes" "Compiler-static"))
         ))
