@@ -54,6 +54,17 @@ Emacs buffers are those whose name starts with *."
       (kill-region (region-beginning) (region-end))
     (kill-region (line-beginning-position) (line-beginning-position 2)) ) )
 ;;**********************************************************************
+;; kill
+;;**********************************************************************
+(defun kill-preceding()
+  "kill the region from the current point to the beginning of the line.
+   Then override the keybinding C-p(previous line) with this command"
+  (interactive)
+  (kill-region (point) (line-beginning-position))
+  )
+(global-set-key (kbd "C-p") 'kill-preceding)
+
+;;**********************************************************************
 ;; customization created by ryuyutyo
 ;;**********************************************************************
 (defun org-flush ()
