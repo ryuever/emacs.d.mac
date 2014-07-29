@@ -107,6 +107,7 @@
 
 (setq org-agenda-files (quote ("~/Dropbox/org/keep-maintain-plan/reading.org"
                                "~/Dropbox/org/keep-maintain-plan/home.org"
+                               "~/Dropbox/org/keep-maintain-plan/lab.org"
                                "~/Dropbox/org/keep-maintain-plan/refile.org")))
 
 (setq org-capture-templates
