@@ -293,3 +293,12 @@ calendar."
     ;;                            (list lunar-month lunar-day)))
     ;;         (format  "Reminder: Today is %s" entry)))
     ;;   )))
+
+;;*************************************************************************************
+;; suppress multi lines to one line
+;;*************************************************************************************
+(defun suppress-multi-lines()
+  (interactive)
+  (goto-char (point-min))
+  (while (re-search-forward "^\n+" nil t)
+    (replace-match "\u000a")))
