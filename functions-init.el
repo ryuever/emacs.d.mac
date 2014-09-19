@@ -302,3 +302,33 @@ calendar."
   (goto-char (point-min))
   (while (re-search-forward "^\n+" nil t)
     (replace-match "\u000a")))
+;;*************************************************************************************
+;; The following functions are used to convert a html file which using <math> </math>
+;; indicate mathematics formular. So it couldn't be prepracated to proper latex.
+;; for detail http://gridlab-d.sourceforge.net/wiki/index.php/Spec:Commercial
+;;*************************************************************************************
+(defun gridlabd-replace-paired-label-with-a-char()
+  "replace labels <math> or </math> with $, pay attention to the following spaces and 
+   preceding spaces"
+  (interactive)
+  (goto-char (point-min))
+  (while (re-search-forward "\\(<math> ?\\| ?</math>\\)" nil t)
+    (replace-match "$"))
+)
+
+(defun gridlabd-command-format()
+  "For recently, replace the unsupported latex command \and,\or,\larr\imples to proper format"
+  (interactive)
+  (goto-char (point-min))
+  (while (re-search-forward "\\\\and" nil t)
+    (replace-match "\\\\&"))
+  (goto-char (point-min))
+  (while (re-search-forward "\\\\or" nil t)
+    (replace-match "\\\\|"))
+  (goto-char (point-min))
+  (while (re-search-forward "\\\\larr" nil t)
+    (replace-match "\\\\Leftarrow"))
+  (goto-char (point-min))
+  (while (re-search-forward "\\\\implies" nil t)
+    (replace-match "\\\\Rightarrow"))
+)
