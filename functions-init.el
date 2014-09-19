@@ -332,3 +332,9 @@ calendar."
   (while (re-search-forward "\\\\implies" nil t)
     (replace-match "\\\\Rightarrow"))
 )
+
+(defun gridlabd-beginning-to-dash()
+  "interactive"
+  (goto-char (point-min))
+  (while (re-search-forward "^\\(.+\\)" nil t)
+    (replace-match "- \\1")))
