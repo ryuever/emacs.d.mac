@@ -338,3 +338,20 @@ calendar."
   (goto-char (point-min))
   (while (re-search-forward "^\\(.+\\)" nil t)
     (replace-match "- \\1")))
+;;*************************************************************************************
+;; convert the file exported from  aiciba new words notepad to orgmode support table format
+;;*************************************************************************************
+(defun aichiba-word-notepad-to-table()
+  (interactive)
+  (goto-char (point-min))
+  (while (re-search-forward "\t" nil t)
+    (replace-match " "))
+  (if mark-active
+      (let ((beg (region-beginning))
+                 (end (copy-marker (region-end))))
+        ;; if the following statement is omitted, it will only process the last line 
+        ;; in this file
+        (goto-char beg)
+        (org-table-convert-region beg end 2)
+        ))
+  )
