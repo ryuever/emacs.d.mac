@@ -355,6 +355,25 @@
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :publishing-directory "~/Documents/public_html/gridlabd/"
          :publishing-function org-publish-attachment)
+
+        ("App-notes"
+         :base-directory "~/Dropbox/org/app/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/Documents/public_html/app/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("App-static"
+         :base-directory "~/Dropbox/org/app/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/Documents/public_html/app/"
+         :publishing-function org-publish-attachment)
         
         ("PythonCookbook" :components ("PythonCookbook-inherit" "PythonCookbook-notes" "PythonCookbook-static"))
         ("Japanese" :components ("Japanese-notes" "Japanese-static"))
@@ -364,4 +383,5 @@
         ("Emacs" :components ( "Emacs-notes" "Emacs-static"))
         ("Fundamental" :components ( "Fundamental-notes" "Fundamental-static"))
         ("Gridlabd" :components ( "Gridlabd-notes" "Gridlabd-static"))
+        ("App" :components ( "App-notes" "App-static"))
         ))
