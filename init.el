@@ -26,6 +26,8 @@
 (load "aspell-init")
 (load "latex-init")
 ;; (load "flymake-init")
+
+(load "slime-init")
 ;;************************************************************************
 ;; add my own alias for productivity.
 ;;************************************************************************
