@@ -431,6 +431,26 @@
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :publishing-directory "~/Documents/public_html/network-programming/"
          :publishing-function org-publish-attachment)
+
+        ("regexp-notes"
+         :base-directory "~/Dropbox/org/regexp/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/Documents/public_html/regexp/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("regexp-static"
+         :base-directory "~/Dropbox/org/regexp/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/Documents/public_html/regexp/"
+         :publishing-function org-publish-attachment)
+
         
         ("PythonCookbook" :components ("PythonCookbook-inherit" "PythonCookbook-notes" "PythonCookbook-static"))
         ("Japanese" :components ("Japanese-notes" "Japanese-static"))
@@ -444,4 +464,5 @@
         ("Shell-Script" :components ( "Shell-Script-notes" "Shell-Script-static"))
         ("C-C++" :components ( "C-C++-notes" "C-C++-static"))
         ("network-programming" :components ( "network-programming-notes" "network-programming-static"))
+        ("regexp" :components ( "regexp-notes" "regexp-static"))
         ))
