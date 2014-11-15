@@ -393,6 +393,44 @@
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :publishing-directory "~/Documents/public_html/shell-script/"
          :publishing-function org-publish-attachment)
+
+        ("C-C++-notes"
+         :base-directory "~/Dropbox/org/C-C++/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/Documents/public_html/C-C++/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("C-C++-static"
+         :base-directory "~/Dropbox/org/C-C++/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/Documents/public_html/C-C++/"
+         :publishing-function org-publish-attachment)
+
+        ("network-programming-notes"
+         :base-directory "~/Dropbox/org/network-programming/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/Documents/public_html/network-programming/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("network-programming-static"
+         :base-directory "~/Dropbox/org/network-programming/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/Documents/public_html/network-programming/"
+         :publishing-function org-publish-attachment)
         
         ("PythonCookbook" :components ("PythonCookbook-inherit" "PythonCookbook-notes" "PythonCookbook-static"))
         ("Japanese" :components ("Japanese-notes" "Japanese-static"))
@@ -404,4 +442,6 @@
         ("Gridlabd" :components ( "Gridlabd-notes" "Gridlabd-static"))
         ("App" :components ( "App-notes" "App-static"))
         ("Shell-Script" :components ( "Shell-Script-notes" "Shell-Script-static"))
+        ("C-C++" :components ( "C-C++-notes" "C-C++-static"))
+        ("network-programming" :components ( "network-programming-notes" "network-programming-static"))
         ))
