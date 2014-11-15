@@ -374,6 +374,25 @@
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :publishing-directory "~/Documents/public_html/app/"
          :publishing-function org-publish-attachment)
+
+        ("Shell-Script-notes"
+         :base-directory "~/Dropbox/org/shell-script/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/Documents/public_html/shell-script/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("Shell-Script-static"
+         :base-directory "~/Dropbox/org/shell-script/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/Documents/public_html/shell-script/"
+         :publishing-function org-publish-attachment)
         
         ("PythonCookbook" :components ("PythonCookbook-inherit" "PythonCookbook-notes" "PythonCookbook-static"))
         ("Japanese" :components ("Japanese-notes" "Japanese-static"))
@@ -384,4 +403,5 @@
         ("Fundamental" :components ( "Fundamental-notes" "Fundamental-static"))
         ("Gridlabd" :components ( "Gridlabd-notes" "Gridlabd-static"))
         ("App" :components ( "App-notes" "App-static"))
+        ("Shell-Script" :components ( "Shell-Script-notes" "Shell-Script-static"))
         ))
