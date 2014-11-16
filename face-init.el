@@ -13,13 +13,22 @@
 ;;(require 'color-theme-approximate)
 ;;(require 'color-theme-github)
 ;;(require 'color-theme-solarized)
-(require 'solarized-dark-theme)
+
 ;;(require 'solarized-light-theme)
 
 ;; (add-to-list 'custom-theme-load-path (concat home-path "/.emacs.d/theme/"))
-(add-to-list 'custom-theme-load-path (concat home-path "/.emacs.d/elpa/color-theme-twilight-0.1/"))
 ;; (require 'color-theme-twilight)
 ;;(load-theme 'solarized-dark t)
+
+;; (require 'solarized-dark-theme)
+;; (add-to-list 'custom-theme-load-path (concat home-path "/.emacs.d/elpa/color-theme-twilight-0.1/"))
+
+;; (require 'color-theme-monokai)
+;; (add-to-list 'custom-theme-load-path (concat home-path "/.emacs.d/elpa/color-theme-monokai-0.0.5/"))
+
+;;(add-to-list 'custom-theme-load-path (concat home-path "/Desktop/monokai-theme-20141002.410/"))
+(load-theme 'monokai)
+;; (load-theme 'solarized-dark)
 ;;************************************************************************
 ;;rainbow-mode minor    have color values colored by themselves
 ;;************************************************************************
