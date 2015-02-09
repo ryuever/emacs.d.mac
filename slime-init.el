@@ -1,5 +1,6 @@
 ;; go to sbcl org page http://www.sbcl.org/platform-table.html, click the green button to download the osx compatible version
-;; cd  sbcl-directory & sh run-sbcl.sh & sh install.sh
+;; cd  sbcl-directory
+;; for OS X, "su -" to setup root, then sh run-sbcl.sh and sudo sh install.sh
 
 ;; download slime respository through "M-x package-list-packages"
 

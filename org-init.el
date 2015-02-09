@@ -155,7 +155,7 @@
 (setq org-html-head-extra (concat "<link rel=\"stylesheet\" href=" css-path " type=\"text/css\" />"))
 ;;(setq org-export-publishing-directory "~/Documents/org/exported_html")
 
-(require 'org-publish)
+;;(require 'org-publish)
 (setq org-publish-project-alist
       '(
         ("PythonCookbook-inherit"
