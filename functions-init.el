@@ -62,8 +62,7 @@ Emacs buffers are those whose name starts with *."
   (interactive)
   (kill-region (point) (line-beginning-position))
   )
-(global-set-key (kbd "C-p") 'kill-preceding)
-
+(global-set-key (kbd "C-x C-p") 'kill-preceding)
 ;;**********************************************************************
 ;; customization created by ryuyutyo
 ;;**********************************************************************

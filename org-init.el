@@ -184,6 +184,25 @@
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :publishing-directory "~/Documents/public_html/PythonCookbook/"
          :publishing-function org-publish-attachment)
+
+        ("PythonLib-notes"
+         :base-directory "~/Dropbox/org/PythonLib/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/Documents/public_html/PythonLib/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("PythonLib-static"
+         :base-directory "~/Dropbox/org/PythonLib/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/Documents/public_html/PythonLib/"
+         :publishing-function org-publish-attachment)
         
         ("English-notes"
          :base-directory "~/Dropbox/org/english/"
@@ -453,6 +472,7 @@
 
         
         ("PythonCookbook" :components ("PythonCookbook-inherit" "PythonCookbook-notes" "PythonCookbook-static"))
+        ("PythonLib" :components ("PythonLib-notes" "PythonLib-static"))        
         ("Japanese" :components ("Japanese-notes" "Japanese-static"))
         ("English" :components ( "English-notes" "English-static"))
         ("Compiler" :components ( "Compiler-notes" "Compiler-static"))

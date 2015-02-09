@@ -1,4 +1,4 @@
-(require 'auto-complete-config)
+;; (require 'auto-complete-config)
 (ac-config-default)
 ;; ;; auto load minor mode
 ;; (add-hook 'org-mode-hook (lambda()(auto-complete-mode 1)))

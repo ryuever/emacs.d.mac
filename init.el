@@ -16,7 +16,7 @@
 (load "js2-init")
 (load "lookup-init")
 (load "org-init")
-;; (load "python-init")
+(load "python-init")
 ;; (load "ruby-init")
 (load "yasnippet-init")
 
