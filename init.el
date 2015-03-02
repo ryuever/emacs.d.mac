@@ -4,7 +4,7 @@
 (load "abbrev-init")
 (load "autocomplete-init")
 (load "auto-pair-init")
-(load "ecb-init")
+;; (load "ecb-init")
 (load "face-init")
 (load "functions-init")
 ;;(load "html-init")

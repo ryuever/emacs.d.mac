@@ -9,7 +9,7 @@
 ;; (provide 'semanticdb-find)
 ;; (provide 'semanticdb-mode)
 ;; (provide 'semantic-load)
-;; (setq stack-trace-on-error t)
+;;(setq stack-trace-on-error t)
 ;;ecb
 (require 'ecb-autoloads)
 
