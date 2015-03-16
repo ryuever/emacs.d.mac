@@ -156,333 +156,116 @@
 ;;(setq org-export-publishing-directory "~/Documents/org/exported_html")
 
 ;;(require 'org-publish)
-(setq org-publish-project-alist
-      '(
-        ("PythonCookbook-inherit"
-         :base-directory "~/Dropbox/org/"
-         :recursive t
-         :base-extension "css\\|js"
-         :publishing-directory "~/Documents/public_html/PythonCookbook/"
-         :publishing-function org-publish-attachment
-         )
 
-        ("PythonCookbook-notes"
-         :base-directory "~/Dropbox/org/PythonCookbook/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/PythonCookbook/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("PythonCookbook-static"
-         :base-directory "~/Dropbox/org/PythonCookbook/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/PythonCookbook/"
-         :publishing-function org-publish-attachment)
+;; ;; (defun
+;; make_publish_stmt (dict_name publish_name)
+;;   (let (header1 header2 dict_path publish_path)
+;;     (setq dict_path (concat "~/Dropbox/org/" dict_name "/"))
+;;     (setq publish_path (concat "~/Documents/publish_html/" publish_name "/"))
+;;     (setq note_header (concat publish_name "-notes"))
+;;     (setq static_header (concat publish_name "-static"))
+;;     (concat "((\"" note_header "\""
+;;          ":base-directory " "\"" dict_path "\"\n"
+;;          ":auto-sitemap t
+;;          :index-filename \"sitemap.org\"
+;;          :index-title \"Sitemap\"
+;;          :recursive t
+;;          :base-extension \"org\"
+;;          :publishing-directory " "\"" publish_path "\"\n"
+;;          ":publishing-function org-html-publish-to-html
+;;          :headline-levels 3
+;;          :auto-preamble t
+;;          )\n"
 
-        ("PythonLib-notes"
-         :base-directory "~/Dropbox/org/PythonLib/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/PythonLib/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("PythonLib-static"
-         :base-directory "~/Dropbox/org/PythonLib/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/PythonLib/"
-         :publishing-function org-publish-attachment)
-        
-        ("English-notes"
-         :base-directory "~/Dropbox/org/english/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/english/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("English-static"
-         :base-directory "~/Dropbox/org/english/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/english/"
-         :publishing-function org-publish-attachment)
-        
-        ("8000-oral-english-notes"
-         :base-directory "~/Dropbox/org/8000-oral-english/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/8000-oral-english/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("English-static"
-         :base-directory "~/Dropbox/org/8000-oral-english/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/8000-oral-english/"
-         :publishing-function org-publish-attachment)
+;;          "(\"" static_header "\""
+;;          ":base-directory " "\"" dict_path "\"\n"
+;;          ":recursive t
+;;          :base-extension \"css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\"
+;;          :publishing-directory " "\"" publish_path "\"\n" 
+;;          ":publishing-function org-publish-attachment)\n"
 
-        ("Japanese-notes"
-         :base-directory "~/Dropbox/org/japanese/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/japanese/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("Japanese-static"
-         :base-directory "~/Dropbox/org/japanese/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/japanese/"
-         :publishing-function org-publish-attachment)
+;;          "(\"" publish_name "\" :components ( \"" note_header "\" \"" static_header "\")))"
+;;          )))
 
-        ("Compiler-notes"
-         :base-directory "~/Dropbox/org/compiler/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/compiler/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("Compiler-static"
-         :base-directory "~/Dropbox/org/compiler/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/compiler/"
-         :publishing-function org-publish-attachment)
+;; ("js" :components ( "Javascript-notes" "Javascript-static"))
+;; (("Javascript" (:components ("Javascript-notes" "Javascript-static"))))
 
-        ("Linux-notes"
-         :base-directory "~/Dropbox/org/linux/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/linux/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("Linux-static"
-         :base-directory "~/Dropbox/org/linux/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/linux/"
-         :publishing-function org-publish-attachment)
+;;     
+;; (("Javascript" :components ("Javascript-notes" "Javascript-static")))
 
-        ("Emacs-notes"
-         :base-directory "~/Dropbox/org/emacs/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/emacs/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("Emacs-static"
-         :base-directory "~/Dropbox/org/emacs/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/emacs/"
-         :publishing-function org-publish-attachment)
 
-        ("Compiler-notes"
-         :base-directory "~/Dropbox/org/compiler/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/compiler/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("Compiler-static"
-         :base-directory "~/Dropbox/org/compiler/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/compiler/"
-         :publishing-function org-publish-attachment)
 
-        ("Fundamental-notes"
-         :base-directory "~/Dropbox/org/fundamental/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/fundamental/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("Fundamental-static"
-         :base-directory "~/Dropbox/org/fundamental/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/fundamental/"
-         :publishing-function org-publish-attachment)
 
-        ("Gridlabd-notes"
-         :base-directory "~/Dropbox/org/gridlabd/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/gridlabd/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("Gridlabd-static"
-         :base-directory "~/Dropbox/org/gridlabd/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/gridlabd/"
-         :publishing-function org-publish-attachment)
 
-        ("App-notes"
-         :base-directory "~/Dropbox/org/app/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/app/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("App-static"
-         :base-directory "~/Dropbox/org/app/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/app/"
-         :publishing-function org-publish-attachment)
 
-        ("Shell-Script-notes"
-         :base-directory "~/Dropbox/org/shell-script/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/shell-script/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("Shell-Script-static"
-         :base-directory "~/Dropbox/org/shell-script/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/shell-script/"
-         :publishing-function org-publish-attachment)
 
-        ("C-C++-notes"
-         :base-directory "~/Dropbox/org/C-C++/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/C-C++/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("C-C++-static"
-         :base-directory "~/Dropbox/org/C-C++/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/C-C++/"
-         :publishing-function org-publish-attachment)
 
-        ("network-programming-notes"
-         :base-directory "~/Dropbox/org/network-programming/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/network-programming/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("network-programming-static"
-         :base-directory "~/Dropbox/org/network-programming/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/network-programming/"
-         :publishing-function org-publish-attachment)
 
-        ("regexp-notes"
-         :base-directory "~/Dropbox/org/regexp/"
-         :auto-sitemap t
-         :index-filename "sitemap.org"
-         :index-title "Sitemap"
-         :recursive t
-         :base-extension "org"
-         :publishing-directory "~/Documents/public_html/regexp/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 3
-         :auto-preamble t
-         )
-        ("regexp-static"
-         :base-directory "~/Dropbox/org/regexp/"
-         :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Documents/public_html/regexp/"
-         :publishing-function org-publish-attachment)
 
-        
-        ("PythonCookbook" :components ("PythonCookbook-inherit" "PythonCookbook-notes" "PythonCookbook-static"))
-        ("PythonLib" :components ("PythonLib-notes" "PythonLib-static"))        
-        ("Japanese" :components ("Japanese-notes" "Japanese-static"))
-        ("English" :components ( "English-notes" "English-static"))
-        ("Compiler" :components ( "Compiler-notes" "Compiler-static"))
-        ("Linux" :components ( "Linux-notes" "Linux-static"))
-        ("Emacs" :components ( "Emacs-notes" "Emacs-static"))
-        ("Fundamental" :components ( "Fundamental-notes" "Fundamental-static"))
-        ("Gridlabd" :components ( "Gridlabd-notes" "Gridlabd-static"))
-        ("App" :components ( "App-notes" "App-static"))
-        ("Shell-Script" :components ( "Shell-Script-notes" "Shell-Script-static"))
-        ("C-C++" :components ( "C-C++-notes" "C-C++-static"))
-        ("network-programming" :components ( "network-programming-notes" "network-programming-static"))
-        ("regexp" :components ( "regexp-notes" "regexp-static"))
-        ))
+
+
+
+;; The typical method for adding a new component to org publish list.
+;; (setq org-publish-project-alist
+;;       '(
+;;         ("Javascript-notes"
+;;          :base-directory "~/Dropbox/org/js/"
+;;          :auto-sitemap t
+;;          :index-filename "sitemap.org"
+;;          :index-title "Sitemap"
+;;          :recursive t
+;;          :base-extension "org"
+;;          :publishing-directory "~/Documents/public_html/Javascript/"
+;;          :publishing-function org-html-publish-to-html
+;;          :headline-levels 3
+;;          :auto-preamble t
+;;          )
+;;         ("Javascript-static"
+;;          :base-directory "~/Dropbox/org/js/"
+;;          :recursive t
+;;          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+;;          :publishing-directory "~/Documents/public_html/Javascript/"
+;;          :publishing-function org-publish-attachment)
+;;         ("js" :components ( "Javascript-notes" "Javascript-static"))))
+(defun make_publish_stmt (dir_name publish_name)
+  "when add a new object to org-publish list, normally It's need to format the dada as listed above.
+   Appearantly, it is fallible; meanwhile when it has bunchs of components, it will be cumbersome.
+   The meaning of corresponding parameters is list as follows : 
+      - dir_name is for the directory name under a specified path
+      - publish_name is for the directory name under the specified published folder"
+  (let (static_header note_header dir_path publish_path)
+    (setq dir_path (concat "~/Dropbox/org/" dir_name "/"))
+    (setq publish_path (concat "~/Documents/public_html/" publish_name "/"))
+    (setq note_header (concat publish_name "-notes"))
+    (setq static_header (concat publish_name "-static"))
+    (append
+     (pairlis (list note_header) (list (apply 'append (pairlis (list :base-directory :auto-sitemap :index-filename :index-title :recursive
+                                                                     :base-extension :publishing-directory :publishing-function
+                                                                     :headline-levels :auto-preamble)
+                                                               (list (list dir_path) (list t) (list "sitemap.org") (list "Sitemap")
+                                                                     (list t) (list "org") (list publish_path)
+                                                                     (list 'org-html-publish-to-html) (list 3) (list t))))))
+     (pairlis (list static_header) (list (apply 'append (pairlis '(:base-directory :recursive :base-extension
+                                                                                   :publishing-directory :publishing-function)
+                                                                 (list (list dir_path) (list t)
+                                                                       (list "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf")
+                                                                       (list publish_path) (list 'org-publish-attachment))))))
+     (pairlis (list dir_name) (pairlis '(:components) (list (list (list note_header static_header))))))))
+
+;; (setq org-publish-project-alist nil)
+
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "PythonCookbook" "Python")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "PythonLib" "PythonLib")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "japanese" "Japanese")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "english" "English")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "compiler" "Compiler")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "linux" "Linux")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "emacs" "Emacs")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "fundamental" "Fundamental")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "gridlabd" "GridLabd")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "app" "App")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "shell-script" "shell-script")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "C-C++" "C-C++")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "network-programming" "network-programming")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "regexp" "regexp")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "tornado" "Tornado")))
