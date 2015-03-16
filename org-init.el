@@ -239,17 +239,25 @@
     (setq note_header (concat publish_name "-notes"))
     (setq static_header (concat publish_name "-static"))
     (append
-     (pairlis (list note_header) (list (apply 'append (pairlis (list :base-directory :auto-sitemap :index-filename :index-title :recursive
-                                                                     :base-extension :publishing-directory :publishing-function
+     (pairlis (list note_header) (list (apply 'append (pairlis (list :base-directory :auto-sitemap :index-filename
+                                                                     :index-title :recursive :base-extension
+                                                                     :publishing-directory :publishing-function
                                                                      :headline-levels :auto-preamble)
-                                                               (list (list dir_path) (list t) (list "sitemap.org") (list "Sitemap")
-                                                                     (list t) (list "org") (list publish_path)
-                                                                     (list 'org-html-publish-to-html) (list 3) (list t))))))
-     (pairlis (list static_header) (list (apply 'append (pairlis '(:base-directory :recursive :base-extension
-                                                                                   :publishing-directory :publishing-function)
-                                                                 (list (list dir_path) (list t)
+                                                               (list (list dir_path) (list t) (list "sitemap.org")
+                                                                     (list "Sitemap") (list t) (list "org")
+                                                                     (list publish_path)
+                                                                     (list 'org-html-publish-to-html) (list 3)
+                                                                     (list t))))))
+     (pairlis (list static_header) (list (apply 'append (pairlis '(:base-directory
+                                                                   :recursive
+                                                                   :base-extension
+                                                                   :publishing-directory
+                                                                   :publishing-function)
+                                                                 (list (list dir_path)
+                                                                       (list t)
                                                                        (list "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf")
-                                                                       (list publish_path) (list 'org-publish-attachment))))))
+                                                                       (list publish_path)
+                                                                       (list 'org-publish-attachment))))))
      (pairlis (list dir_name) (pairlis '(:components) (list (list (list note_header static_header))))))))
 
 ;; (setq org-publish-project-alist nil)
@@ -266,6 +274,7 @@
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "app" "App")))
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "shell-script" "shell-script")))
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "C-C++" "C-C++")))
-(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "network-programming" "network-programming")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "network-programming"
+                                                                                     "network-programming")))
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "regexp" "regexp")))
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "tornado" "Tornado")))
