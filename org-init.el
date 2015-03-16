@@ -147,64 +147,20 @@
 ;;org-mode HTML publish
 ;;************************************************************************
 ;;when you type C-c C-e b command, it will add this css to current page.
-;; (setq org-html-head-extra "<link rel=\"stylesheet\" href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
+;; (setq org-html-head-extra "<link rel=\"stylesheet\" 
+;; href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
 ;; <link rel=\"stylesheet\" href=\"file:///home/ryu/org/static/styles/default.css\">
 ;; <script src=\"file:///home/ryu/org/static/highlight.pack.js\"></script>
 ;; <script>hljs.initHighlightingOnLoad();</script>")
-(setq css-path (concat my-emacs-path "org/static/css/stylesheet.css"))
-(setq org-html-head-extra (concat "<link rel=\"stylesheet\" href=" css-path " type=\"text/css\" />"))
+;; (setq css-path (concat my-emacs-path "org/static/css/stylesheet.css"))
+;; (setq org-html-head-extra (concat "<link rel=\"stylesheet\" href=" css-path " type=\"text/css\" />"))
 ;;(setq org-export-publishing-directory "~/Documents/org/exported_html")
 
 ;;(require 'org-publish)
 
-;; ;; (defun
-;; make_publish_stmt (dict_name publish_name)
-;;   (let (header1 header2 dict_path publish_path)
-;;     (setq dict_path (concat "~/Dropbox/org/" dict_name "/"))
-;;     (setq publish_path (concat "~/Documents/publish_html/" publish_name "/"))
-;;     (setq note_header (concat publish_name "-notes"))
-;;     (setq static_header (concat publish_name "-static"))
-;;     (concat "((\"" note_header "\""
-;;          ":base-directory " "\"" dict_path "\"\n"
-;;          ":auto-sitemap t
-;;          :index-filename \"sitemap.org\"
-;;          :index-title \"Sitemap\"
-;;          :recursive t
-;;          :base-extension \"org\"
-;;          :publishing-directory " "\"" publish_path "\"\n"
-;;          ":publishing-function org-html-publish-to-html
-;;          :headline-levels 3
-;;          :auto-preamble t
-;;          )\n"
-
-;;          "(\"" static_header "\""
-;;          ":base-directory " "\"" dict_path "\"\n"
-;;          ":recursive t
-;;          :base-extension \"css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\"
-;;          :publishing-directory " "\"" publish_path "\"\n" 
-;;          ":publishing-function org-publish-attachment)\n"
-
-;;          "(\"" publish_name "\" :components ( \"" note_header "\" \"" static_header "\")))"
-;;          )))
-
-;; ("js" :components ( "Javascript-notes" "Javascript-static"))
-;; (("Javascript" (:components ("Javascript-notes" "Javascript-static"))))
-
-;;     
-;; (("Javascript" :components ("Javascript-notes" "Javascript-static")))
-
-
-
-
-
-
-
-
-
-
-
-
-
+;;************************************************************************
+;; add a component to org publish list by only one line
+;;************************************************************************
 ;; The typical method for adding a new component to org publish list.
 ;; (setq org-publish-project-alist
 ;;       '(
