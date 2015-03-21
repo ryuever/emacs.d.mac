@@ -216,7 +216,7 @@
                                                                        (list 'org-publish-attachment))))))
      (pairlis (list dir_name) (pairlis '(:components) (list (list (list note_header static_header))))))))
 
-;; (setq org-publish-project-alist nil)
+(setq org-publish-project-alist nil)
 
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "PythonCookbook" "Python")))
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "PythonLib" "PythonLib")))
