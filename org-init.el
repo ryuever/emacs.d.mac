@@ -147,13 +147,13 @@
 ;;org-mode HTML publish
 ;;************************************************************************
 ;;when you type C-c C-e b command, it will add this css to current page.
-;; (setq org-html-head-extra "<link rel=\"stylesheet\" 
-;; href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
-;; <link rel=\"stylesheet\" href=\"file:///home/ryu/org/static/styles/default.css\">
-;; <script src=\"file:///home/ryu/org/static/highlight.pack.js\"></script>
-;; <script>hljs.initHighlightingOnLoad();</script>")
-;; (setq css-path (concat my-emacs-path "org/static/css/stylesheet.css"))
-;; (setq org-html-head-extra (concat "<link rel=\"stylesheet\" href=" css-path " type=\"text/css\" />"))
+(setq org-html-head-extra "<link rel=\"stylesheet\" 
+href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
+<link rel=\"stylesheet\" href=\"file:///home/ryu/org/static/styles/default.css\">
+<script src=\"file:///home/ryu/org/static/highlight.pack.js\"></script>
+<script>hljs.initHighlightingOnLoad();</script>")
+(setq css-path (concat my-emacs-path "org/static/css/stylesheet.css"))
+(setq org-html-head-extra (concat "<link rel=\"stylesheet\" href=" css-path " type=\"text/css\" />"))
 ;;(setq org-export-publishing-directory "~/Documents/org/exported_html")
 
 ;;(require 'org-publish)
