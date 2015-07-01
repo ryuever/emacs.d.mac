@@ -36,3 +36,4 @@
 
 ;; Download elpy package from package-list
 ;; (elpy-enable)
+(setq python-indent-guess-indent-offset nil)

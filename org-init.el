@@ -234,3 +234,4 @@ href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
                                                                                      "network-programming")))
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "regexp" "regexp")))
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "tornado" "Tornado")))
+(setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "ps" "ps")))
