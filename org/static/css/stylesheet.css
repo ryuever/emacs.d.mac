@@ -785,6 +785,8 @@ td, th {
 
 
 /* customized by ryu */
-.figure {
-    width: 50%;
-}
+  .figure p img {      
+      width: 550px;
+      height: 400px;
+      align: "left"
+  }
