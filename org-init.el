@@ -103,27 +103,27 @@
               ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
 
 (setq org-directory "~/org")
-(setq org-default-notes-file "~/Dropbox/org/keep-maintain-plan/refile.org")
+(setq org-default-notes-file "~/百度云同步盘/org/keep-maintain-plan/refile.org")
 
-(setq org-agenda-files (quote ("~/Dropbox/org/keep-maintain-plan/reading.org"
-                               "~/Dropbox/org/keep-maintain-plan/home.org"
-                               "~/Dropbox/org/keep-maintain-plan/lab.org"
-                               "~/Dropbox/org/keep-maintain-plan/refile.org")))
+(setq org-agenda-files (quote ("~/百度云同步盘/org/keep-maintain-plan/reading.org"
+                               "~/百度云同步盘/org/keep-maintain-plan/home.org"
+                               "~/百度云同步盘/org/keep-maintain-plan/lab.org"
+                               "~/百度云同步盘/org/keep-maintain-plan/refile.org")))
 
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file "~/Dropbox/org/keep-maintain-plan/refile.org")
+      (quote (("t" "todo" entry (file "~/百度云同步盘/org/keep-maintain-plan/refile.org")
                "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("r" "respond" entry (file "~/Dropbox/org/keep-maintain-plan/refile.org")
+              ("r" "respond" entry (file "~/百度云同步盘/org/keep-maintain-plan/refile.org")
                "* TODO Respond to %:from on %:subject\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
-              ("n" "note" entry (file "~/Dropbox/org/keep-maintain-plan/refile.org")
+              ("n" "note" entry (file "~/百度云同步盘/org/keep-maintain-plan/refile.org")
                "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("j" "Journal" entry (file+datetree "~/Dropbox/org/keep-maintain-plan/diary.org")
+              ("j" "Journal" entry (file+datetree "~/百度云同步盘/org/keep-maintain-plan/diary.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "org-protocol" entry (file "~/Dropbox/org/keep-maintain-plan/refile.org")
+              ("w" "org-protocol" entry (file "~/百度云同步盘/org/keep-maintain-plan/refile.org")
                "* TODO Review %c\n%U\n" :immediate-finish t)
-              ("p" "Phone call" entry (file "~/Dropbox/org/keep-maintain-plan/refile.org")
+              ("p" "Phone call" entry (file "~/百度云同步盘/org/keep-maintain-plan/refile.org")
                "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-              ("h" "Habit" entry (file "~/Dropbox/org/keep-maintain-plan/refile.org")
+              ("h" "Habit" entry (file "~/百度云同步盘/org/keep-maintain-plan/refile.org")
                "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"<%Y-%m-%d %a .+1d/3d>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 ;;************************************************************************
 ;;org-mode babel
@@ -165,7 +165,7 @@ href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
 ;; (setq org-publish-project-alist
 ;;       '(
 ;;         ("Javascript-notes"
-;;          :base-directory "~/Dropbox/org/js/"
+;;          :base-directory "~/百度云同步盘/org/js/"
 ;;          :auto-sitemap t
 ;;          :index-filename "sitemap.org"
 ;;          :index-title "Sitemap"
@@ -177,7 +177,7 @@ href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
 ;;          :auto-preamble t
 ;;          )
 ;;         ("Javascript-static"
-;;          :base-directory "~/Dropbox/org/js/"
+;;          :base-directory "~/百度云同步盘/org/js/"
 ;;          :recursive t
 ;;          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
 ;;          :publishing-directory "~/Documents/public_html/Javascript/"
@@ -190,7 +190,7 @@ href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
       - dir_name is for the directory name under a specified path
       - publish_name is for the directory name under the specified published folder"
   (let (static_header note_header dir_path publish_path)
-    (setq dir_path (concat "~/Dropbox/org/" dir_name "/"))
+    (setq dir_path (concat "~/百度云同步盘/org/" dir_name "/"))
     (setq publish_path (concat "~/Documents/public_html/" publish_name "/"))
     (setq note_header (concat publish_name "-notes"))
     (setq static_header (concat publish_name "-static"))
