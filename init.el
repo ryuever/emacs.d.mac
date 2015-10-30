@@ -1,6 +1,6 @@
 (load "packages-init")  ;ELPA setup
 (load "variables-init")
-(load "keybinding-init") 
+
 (load "abbrev-init")
 (load "autocomplete-init")
 (load "auto-pair-init")
@@ -28,6 +28,9 @@
 ;; (load "flymake-init")
 
 (load "slime-init")
+(load "helm-init")
+(load "web-mode-init")
+(load "keybinding-init") 
 ;;************************************************************************
 ;; add my own alias for productivity.
 ;;************************************************************************
@@ -36,9 +39,10 @@
 ;; setup for emacs font 
 ;;**********************************************************************
 ;; (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
-(set-fontset-font
-    (frame-parameter nil 'font)
-    'han
-    (font-spec :family "Hiragino Sans GB" ))
+
+;; (set-fontset-font
+;;     (frame-parameter nil 'font)
+;;     'han
+;;     (font-spec :family "Hiragino Sans GB" ))
 
 (require 'calendar)

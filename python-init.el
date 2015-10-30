@@ -1,39 +1,44 @@
-;; refer to https://wiki.python.org/moin/EmacsEditor for information about the Python plugin 
-;; used in Emacs.
-
-;; ;; (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-
-;; ;; (add-hook 'shell-mode-hook
-;; ;;           (lambda ()
-;; ;;             (setq indent-tabs-mode t)
-;; ;;             (setq tab-width 4)
-;; ;;             (setq python-indent-offset 4))) ;;tab = 2 is not conform with Pep8
-
-;; ;; jedi for python auto-completion
-;; (require 'epc)
-;; (require 'deferred)
-;; (require 'jedi)
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (setq jedi:setup-keys t)
-;; ;;(autoload 'jedi:setup "jedi" nil t)
-;; (add-hook 'ein:connect-mode-hook 'ein:jedi-setup)
-;; ;;**********************************************************************
-;; ;; django 
-;; ;;**********************************************************************
-;; (require 'sws-mode)
-;; (require 'jade-mode)
-;; (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
-;; (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-
-;; second time comment
-;; (global-hl-line-mode nil) ;; To enable
-; (nload-file "~/.emacs.d/emacs-for-python/epy-init.el")
-
-;; (set-face-background 'hl-line "black") ;; change with the color that you like
-                                       ;; for a list of colors: http://raebear.net/comp/emacscolors.html
-;; (require 'highlight-indentation)
-;; (add-hook 'python-mode-hook 'highlight-indentation)
+;; https://wiki.python.org/moin/EmacsEditor for info about the Python plugin used in Emacs
 
 ;; Download elpy package from package-list
 ;; (elpy-enable)
 (setq python-indent-guess-indent-offset nil)
+
+;; refer to http://blog.csdn.net/mikelearnscode/article/details/23022277
+;; download elpy and jedi through command M-x package-list-packages
+(require 'elpy nil t)
+(elpy-enable)
+
+;; for python syntax check, download pyflakes with command : pip install --upgrade pyflakes
+(setq python-check-command "/usr/local/bin/pyflakes")
+
+
+(setq elpy-rpc-backend "jedi")
+
+
+;; ; use IPython
+;; (setq-default py-shell-name "ipython")
+;; (setq-default py-which-bufname "IPython")
+;; ; use the wx backend, for both mayavi and matplotlib
+;; (setq py-python-command-args
+;;   '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
+;; (setq py-force-py-shell-name-p t)
+
+
+;; (setq py-python-command-args '("--matplotlib" "--colors" "LightBG"))
+;; (setq ansi-color-for-comint-mode t)
+;; (require 'ipython)
+
+
+;; (require 'python)
+(setq
+ python-shell-interpreter "/usr/local/bin/ipython"
+ python-shell-interpreter-args "--pylab"
+ python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+ python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+ python-shell-completion-setup-code
+ "from IPython.core.completerlib import module_completion"
+ python-shell-completion-module-string-code
+ "';'.join(module_completion('''%s'''))\n"
+ python-shell-completion-string-code
+ "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")

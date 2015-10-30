@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+begin_src LaTeX...#+end_src
+# key: 8tex
+# --
+#+begin_src LaTeX -n -r
+$0
+#+end_src

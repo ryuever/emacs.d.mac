@@ -28,6 +28,12 @@
 
 ;;(add-to-list 'custom-theme-load-path (concat home-path "/Desktop/monokai-theme-20141002.410/"))
 (load-theme 'monokai)
+;; (load-theme 'tomorrow)
+(require 'powerline-evil)
+(require 'powerline)
+;; (powerline-default-theme)
+;; (powerline-evil-vim-theme)
+(powerline-center-evil-theme)
 ;; (load-theme 'solarized-dark)
 ;;************************************************************************
 ;;rainbow-mode minor    have color values colored by themselves

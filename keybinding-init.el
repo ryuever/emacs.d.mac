@@ -76,3 +76,50 @@
 
 (add-hook 'org-mode-hook (lambda()
   		    (local-set-key (kbd "C-M-j") 'org-insert-heading)))
+
+
+;;*************************************************************************************
+;; define minor mode and mode map to override keybinding in major/minor mode
+;;*************************************************************************************
+;; (add-hook 'tern-mode-hook
+;;           (lambda ()
+;;             (local-unset-key [(meta ?.)])))
+;; (add-hook 'tern-mode-hook
+;;           (lambda ()
+;;             (local-unset-key (kbd "M-,"))))
+
+
+(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
+
+;; fix issue in tern mode
+(define-key my-keys-minor-mode-map [(meta ?.)] 'find-tag)
+(define-key my-keys-minor-mode-map [(meta ?,)] 'pop-tag-mark)
+
+(define-minor-mode my-keys-minor-mode
+  "A minor mode so that my key settings override annoying major modes."
+  t " my-keys" 'my-keys-minor-mode-map)
+(my-keys-minor-mode 1)
+
+
+;; (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
+
+;; (define-minor-mode my-keys-minor-mode
+;;      "A minor mode so that my key settings override annoying major modes."
+;;      t " my-keys" 'my-keys-minor-mode-map)
+;; ;; fix issue in tern mode
+
+;; ;; (eval-after-load "tern-mode"
+;; ;;   '(define-key my-keys-minor-mode-map [(meta ?.)] 'find-tag))
+;; (define-key my-keys-minor-mode-map [(meta ?.)] 'find-tag)
+;; (define-key my-keys-minor-mode-map [(meta ?,)] 'pop-tag-mark)
+
+;; (my-keys-minor-mode 1)
+
+;; (eval-after-load "tern-mode"
+;;   '(define-key tern-mode-keymap (kbd "M-.") nil))
+
+;; (eval-after-load "tern-mode"
+;;   '(define-key tern-mode-keymap [(meta ?.)] 'find-tag))
+
+;; (define-key tern-mode-keymap (kbd "M-.") nil)
+
