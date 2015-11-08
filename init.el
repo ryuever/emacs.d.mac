@@ -32,6 +32,7 @@
 (load "web-mode-init")
 (load "keybinding-init")
 (load "emacs-rock")
+(load "outline")
 ;;************************************************************************
 ;; add my own alias for productivity.
 ;;************************************************************************
