@@ -11,13 +11,16 @@
 (dolist (mode code-editing-mode-hooks)
   (add-hook mode 'hs-minor-mode))
 
+(setq outline-minor-mode 1)
 ;;*************************************************************************************
 ;; A simple coffeescript and mocha testing hide or show block implementation.
 ;;*************************************************************************************
+
 (defun my-coffee-customizations()
   (outline-minor-mode)
-  (setq outline-regexp "\\([ \t]*@\\)\\|\\(^describe\\)")
+  (setq outline-regexp "\\([ \t]*@\\)\\|\\(^describe\\)\\|\\([ \t]*it\\)")
   )
+(setq coffee-mode-hook 'my-coffee-customizations)
 ;; the keybinding is copied from ew : Outline Minor Mode
 ;; Outline-minor-mode key map
 (define-prefix-command 'cm-map nil "Outline-")

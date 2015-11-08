@@ -14,21 +14,21 @@
 (setq inferior-js-program-command "nodejs")
 (setq inferior-js-mode-hook
       (lambda ()
-	;; We like nice colors
-	(ansi-color-for-comint-mode-on)
-	;; Deal with some prompt nonsense
-	(add-to-list
-	 'comint-preoutput-filter-functions
-	 (lambda (output)
-	   (replace-regexp-in-string "\033\\[[0-9]+[A-Z]" "" output)))))
+        ;; We like nice colors
+        (ansi-color-for-comint-mode-on)
+        ;; Deal with some prompt nonsense
+        (add-to-list
+         'comint-preoutput-filter-functions
+         (lambda (output)
+           (replace-regexp-in-string "\033\\[[0-9]+[A-Z]" "" output)))))
 ;;(setq inferior-js-program-command "/usr/bin/java org.mozilla.javascript.tools.shell.Main")
 (add-hook 'js2-mode-hook '(lambda ()
-			    (local-set-key "\C-x\C-e" 'js-send-last-sexp)
-			    (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
-			    (local-set-key "\C-cb" 'js-send-buffer)
-			    (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
-			    (local-set-key "\C-cl" 'js-load-file-and-go)
-			    ))
+                            (local-set-key "\C-x\C-e" 'js-send-last-sexp)
+                            (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
+                            (local-set-key "\C-cb" 'js-send-buffer)
+                            (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
+                            (local-set-key "\C-cl" 'js-load-file-and-go)
+                            ))
 
 ;;;;add jquery-doc.el and jquery-doc-data.el to load-path ....enable autocomplete
 (add-to-list 'load-path (concat my-emacs-path "/jquery-doc.el-master"))
@@ -41,11 +41,14 @@
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'tern
-   '(progn
-      (require 'tern-auto-complete)
-      (tern-ac-setup)))
+  '(progn
+     (require 'tern-auto-complete)
+     (tern-ac-setup)))
 
-(add-hook 'jade-mode-hook
-          (lambda()
-            (setq jade-tab-width 2)
-            ))
+(add-hook 'jade-mode-hook (lambda() (setq jade-tab-width 2)))
+
+
+;; automatically clean up bad whitespace
+(setq whitespace-action '(auto-cleanup))
+;; only show bad whitespace
+(setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab))
