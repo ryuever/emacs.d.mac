@@ -30,13 +30,14 @@
 (load "slime-init")
 (load "helm-init")
 (load "web-mode-init")
-(load "keybinding-init") 
+(load "keybinding-init")
+(load "emacs-rock")
 ;;************************************************************************
 ;; add my own alias for productivity.
 ;;************************************************************************
 (load "my_alias")
 ;;**********************************************************************
-;; setup for emacs font 
+;; setup for emacs font
 ;;**********************************************************************
 ;; (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
 
