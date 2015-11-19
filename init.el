@@ -33,6 +33,7 @@
 (load "keybinding-init")
 (load "emacs-rock")
 (load "outline-hs")
+(load "whitespace-init")
 ;;************************************************************************
 ;; add my own alias for productivity.
 ;;************************************************************************
