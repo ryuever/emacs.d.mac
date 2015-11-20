@@ -35,6 +35,7 @@
 (load "outline-hs")
 (load "whitespace-init")
 (load "customization-init")
+(load "bookmark-init")
 ;;************************************************************************
 ;; add my own alias for productivity.
 ;;************************************************************************
