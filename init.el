@@ -34,6 +34,7 @@
 (load "emacs-rock")
 (load "outline-hs")
 (load "whitespace-init")
+(load "customization-init")
 ;;************************************************************************
 ;; add my own alias for productivity.
 ;;************************************************************************
