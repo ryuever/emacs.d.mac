@@ -146,18 +146,11 @@
 ;;************************************************************************
 ;;org-mode HTML publish
 ;;************************************************************************
-;;when you type C-c C-e b command, it will add this css to current page.
-(setq org-html-head-extra "<link rel=\"stylesheet\" 
-href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
-<link rel=\"stylesheet\" href=\"file:///home/ryu/org/static/styles/default.css\">
-<script src=\"file:///home/ryu/org/static/highlight.pack.js\"></script>
-<script>hljs.initHighlightingOnLoad();</script>")
-(setq css-path (concat my-emacs-path "org/static/css/stylesheet.css"))
-(setq org-html-head-extra (concat "<link rel=\"stylesheet\" href=" css-path " type=\"text/css\" />"))
-;;(setq org-export-publishing-directory "~/Documents/org/exported_html")
-
-;;(require 'org-publish)
-
+(setq css-path-1 (concat my-emacs-path "org/static/css/stylesheet.css"))
+(setq css-path-2 (concat my-emacs-path "org/static/css/keys.css"))
+(setq org-html-head-extra
+      (concat "<link rel=\"stylesheet\" href=" css-path-1 " type=\"text/css\" />"
+              "<link rel=\"stylesheet\" href=" css-path-2 " type=\"text/css\" />"))
 ;;************************************************************************
 ;; add a component to org publish list by only one line
 ;;************************************************************************
@@ -235,3 +228,9 @@ href=\"file:///home/ryu/org/static/css/stylesheet-old.css\" type=\"text/css\" />
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "regexp" "regexp")))
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "tornado" "Tornado")))
 (setq org-publish-project-alist (append org-publish-project-alist (make_publish_stmt "ps" "ps")))
+
+;;*************************************************************************************
+;; Inserting the kbd tag in interactively
+;;*************************************************************************************
+(eval-after-load 'ox-html
+    '(push '(code . "<kbd>%s</kbd>") org-html-text-markup-alist))
