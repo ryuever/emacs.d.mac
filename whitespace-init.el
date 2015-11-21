@@ -11,6 +11,4 @@
 
 (setq whitespace-line-column 85)
 
-(global-set-key (kbd "\C-c w") 'whitespace-mode)
-
-(global-set-key (kbd "\C-o k") 'whitespace-mode)
+(global-set-key (kbd "\C-x w") 'whitespace-mode)
