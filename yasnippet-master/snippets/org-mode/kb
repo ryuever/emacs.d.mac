@@ -1,0 +1,5 @@
+# contributor: ryu
+# name: <kbd>...</kbd>
+# key: kb
+# --
+~ $1 ~ $0

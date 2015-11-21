@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+BEGIN_SRC coffee...#+END_SRC
+# key: 8cf
+# --
+#+BEGIN_SRC coffee -n -r
+$0
+#+END_SRC
