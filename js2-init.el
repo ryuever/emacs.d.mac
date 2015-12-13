@@ -45,12 +45,8 @@
      (require 'tern-auto-complete)
      (tern-ac-setup)))
 
-(add-hook 'jade-mode-hook (lambda() (setq jade-tab-width 2)))
-
-
 ;; automatically clean up bad whitespace
 (setq whitespace-action '(auto-cleanup))
 ;; only show bad whitespace
 (setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab))
 (setq js2-basic-offset 2)
-(setq coffee-tab-width 2)
