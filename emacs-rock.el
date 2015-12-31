@@ -46,3 +46,10 @@
 ;; 文件保存的时候自动去除尾部的whitespace
 ;;*************************************************************************************
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
+;;*************************************************************************************
+;; support shift + arrow to switch between windows
+;;*************************************************************************************
+(windmove-default-keybindings)
+(setq windmove-wrap-around t)
