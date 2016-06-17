@@ -1,0 +1,6 @@
+# name: react state initialization
+# key: rts
+# --
+    this.state = ({
+      $0
+    })

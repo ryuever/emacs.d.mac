@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+BEGIN_SRC json...#+END_SRC
+# key: 8json
+# --
+#+BEGIN_SRC json -n -r
+$0
+#+END_SRC
